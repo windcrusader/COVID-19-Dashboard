@@ -5,6 +5,10 @@ import dash_html_components as html
 import datetime as dt
 import plotly.graph_objects as go
 
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+
+
 dailycases = [5,6, 8, 9,12,20,28,
               39,52,66,102,155,205,283,
               368,451,514,589,647,708,797,
@@ -38,7 +42,9 @@ for i in range(len(dailycases)):
 dates_rev = list(reversed(dates))
 x_bar = dates_rev[-6::]
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__,  external_stylesheets=external_stylesheets)
+
+server = app.server
 
 app.layout = html.Div(children=[
     html.H1(children='NZ COVID-19 Dashboard'),
