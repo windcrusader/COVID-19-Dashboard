@@ -5,3 +5,4 @@ gunicorn
 jupyter
 numpy
 pandas
+plotly
